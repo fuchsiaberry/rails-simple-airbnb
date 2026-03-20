@@ -1,13 +1,13 @@
 <h1>Popular homes in Taipei</h1>
 
-<p class="btn btn-dark"><%= link_to "Create Flat", flats_new_path %></p>
+<p><%= link_to "Create Flat", flats_new_path, class: "btn btn-primary text-decoration-none" %></p>
 
 <% @flats.each do |flat| %>
   <div class="card" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title"><%= flat.name %></h5>
       <p class="card-text"><%= flat.description %></p>
-      <p class="btn btn-dark"><%= link_to "More info", flat_path(flat) %></p>
+      <p><%= link_to "More info", flat_path(flat), class: "btn btn-primary text-decoration-none" %></p>
     </div>
   </div>
 <% end %>
