@@ -1,15 +1,27 @@
-<h1>Edit <%= @flat.name %></h1>
+<h1>Edit "<%= @flat.name %>"</h1>
 
-<%= form_with model: @flat do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :address %>
-  <%= f.text_field :address %>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-  <%= f.label :price_per_night %>
-  <%= f.number_field :price_per_night %>
-  <%= f.label :number_of_guests %>
-  <%= f.number_field :number_of_guests %>
-  <%= f.submit %>
-<% end %>
+<div>
+  <%= form_with model: @flat do |f| %>
+    <div class="mb-3">
+      <%= f.label :name, class: "form-label fw-bold" %>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    <div class="mb-3">
+      <%= f.label :address, class: "form-label fw-bold" %>
+      <%= f.text_field :address, class: "form-control" %>
+    </div>
+    <div></div>
+      <%= f.label :description, class: "form-label fw-bold" %>
+      <%= f.text_field :description, class: "form-control" %>
+    </div>
+    <div class="mb-3">
+      <%= f.label :price_per_night, class: "form-label fw-bold" %>
+      <%= f.number_field :price_per_night, class: "form-control" %>
+    </div>
+    <div class="mb-3">
+      <%= f.label :number_of_guests, class: "form-label fw-bold" %>
+      <%= f.number_field :number_of_guests, class: "form-control" %>
+    </div>
+    <%= f.submit "Update", class: "btn btn-outline-primary" %>
+  <% end %>
+</div>
