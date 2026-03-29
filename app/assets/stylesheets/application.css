@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+ @import "_navbar.html.erb";
+
+ .airbnb-logo-small {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2026_03_18_224055) do
+ActiveRecord::Schema[7.2].define(version: 2026_03_29_124826) do
   create_table "flats", force: :cascade do |t|
     t.string "name"
     t.string "address"
@@ -20,4 +20,15 @@ ActiveRecord::Schema[7.2].define(version: 2026_03_18_224055) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "rating"
+    t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "flat_id", null: false
+    t.index ["flat_id"], name: "index_reviews_on_flat_id"
+  end
+
+  add_foreign_key "reviews", "flats"
 end
